@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:33:06 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/07/24 17:47:13 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/07/24 18:46:27 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char	*ft_gnl_strchr(char *s, int c);
 char	*ft_gnl_strjoin(char *backup, char *buff);
 char	*ft_get_line(char *backup);
 char	*ft_backup(char *backup);
+void	ft_execve(char *str, char **env);
 
 #endif
