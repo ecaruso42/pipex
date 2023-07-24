@@ -11,7 +11,7 @@ OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra
 CC = gcc
 
-$(NAME) :
+$(NAME) : $(OBJ)
 	make -C $(LIBFT)
 	$(CC) $(FLAGS) $(SRC) ./Libft/libft.a -o $(NAME)
 
