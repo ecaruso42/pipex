@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:32:05 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/07/20 16:30:32 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/07/24 18:15:29 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	check_cmd(int argc, char **argv, char **env, t_utils *utils)
 
 int	main(int argc, char **argv, char **env)
 {
+	int		test;
 	t_utils	utils;
 
 	if (argc == 1)
@@ -112,4 +113,12 @@ int	main(int argc, char **argv, char **env)
 		child_process(argv[utils.i++], env);
 	if (utils.is_here_doc)
 		unlink("temp.txt");
+	test = fork();
+	if (test == 0)
+	{
+		ft_dup2(&utils.fileout, STDOUT_FILENO);
+		ft_execve(argv[utils.i], env);
+	}
+	waitpid(test, NULL, 0);
+	close(utils.fileout);
 }
