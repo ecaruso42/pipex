@@ -2,7 +2,10 @@ NAME = pipex
 LIBFT = ./Libft
 
 SRC = \
-		main.c
+		main.c \
+		child_process.c \
+		get_next_line.c \
+		get_next_line_utils.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra
